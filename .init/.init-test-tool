@@ -1,0 +1,4 @@
+{
+    "command": "psql -h localhost -U appuser -d myapp -p 5000 -c \"SELECT version();\"",
+    "working_directory": "/home/kavia/workspace/code-generation/codeinsight-hub-234785-234810/devtrackr_database"
+}
