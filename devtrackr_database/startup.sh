@@ -148,6 +148,12 @@ echo "User: ${DB_USER}"
 echo "Port: ${DB_PORT}"
 echo ""
 
+echo "Running DevTrackr schema migrations + seed..."
+# Run idempotent schema + seed for DevTrackr. This uses db_connection.txt as the connection source.
+# If this fails, backend boot may fail due to missing tables.
+bash ./migrate_and_seed.sh
+
+echo ""
 echo "Environment variables saved to db_visualizer/postgres.env"
 echo "To use with Node.js viewer, run: source db_visualizer/postgres.env"
 
